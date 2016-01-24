@@ -27,72 +27,99 @@
                     <p:menuitem value="Usuarios" icon="ui-icon-person"
                                 onclick="PF('wUsuarios').show()"
                                 update=":frmUsuarios"
+                                style="width: 125px;"
                                 actionListener="#{manUsuarios.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuUsuarios')}"
                                 />
                     <p:menuitem value="Departamentos" icon="ui-icon-home" 
                                 onclick="PF('wDepartamentos').show()"
                                 update=":frmDepartamentos"
+                                style="width: 125px;"
                                 actionListener="#{manDepartamentos.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuDeptos')}"
                                 />
                     <p:menuitem value="Unidades" icon="ui-icon-bookmark" 
                                 onclick="PF('wUniMed').show()"
                                 update=":frmUniMed"
+                                style="width: 125px;"
                                 actionListener="#{manUniMed.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuUnidades')}"
                                 />
                     <p:menuitem value="Movimientos" icon="ui-icon-arrowthick-2-n-s" 
                                 onclick="PF('wMov').show()"
                                 update=":frmMov"
+                                style="width: 125px;"
                                 actionListener="#{manMovimientos.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuMovimientos')}"
                                 />
                     <p:menuitem value="Bodegas" icon="ui-icon-home" 
                                 onclick="PF('wPaises').show()"
                                 update=":frmPaises"
+                                style="width: 125px;"
                                 actionListener="#{manPaises.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuBodegas')}"
                                 />
                     <p:menuitem value="Estantes" icon="ui-icon-flag" 
                                 onclick="PF('wBod').show()"
                                 update=":frmBod"
                                 actionListener="#{manBodegas.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuEstantes')}"
                                 />
                     <p:menuitem value="Repisas" icon="ui-icon-notice" 
                                 onclick="PF('wUbi').show()"
                                 update=":frmUbi"
+                                style="width: 125px;"
                                 actionListener="#{manUbicaciones.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Proveedores" icon="ui-icon-person" 
                                 onclick="PF('wPro').show()"
+                                style="width: 125px;"
                                 action="#{manProveedores.iniciarventana()}" 
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 update=":frmPro"
                                 />
                     <p:menuitem value="Marcas" icon="ui-icon-tag" 
                                 onclick="PF('wMarca').show()"
+                                style="width: 125px;"
                                 action="#{manMarcas.iniciarventana()}" 
                                 update=":frmMarca"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Tipología Mant." icon="ui-icon-wrench" 
                                 onclick="PF('wTipMan').show()"
+                                style="width: 125px;"
                                 action="#{manTipos.iniciarventana()}" 
                                 update=":frmTipMan"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Categorías Piezas" icon="ui-icon-note" 
                                 onclick="PF('wCatPie').show()"
+                                style="width: 125px;"
                                 action="#{manCategorias.iniciarventana()}" 
                                 update=":frmCatPie"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Operaciones" icon="ui-icon-wrench" 
                                 onclick="PF('wOpe').show()"
+                                style="width: 125px;"
                                 action="#{manOperaciones.iniciarventana()}" 
                                 update=":frmOpe"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Equipos" icon="ui-icon-gear" 
                                 onclick="PF('wEquipos').show()"
+                                style="width: 125px;"
                                 action="#{manEquipos.iniciarventana()}" 
                                 update=":frmEquipos"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                     <p:menuitem value="Piezas" icon="ui-icon-pin-s" 
                                 onclick="PF('wPiezas').show()"
+                                style="width: 125px;"
                                 action="#{manPiezas.iniciarventana()}" 
                                 update=":frmPiezas"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                 </p:submenu>
 
@@ -101,19 +128,25 @@
                         <p:menuitem value="Nueva Solicitud" icon="ui-icon-document" 
                                     onclick="PF('wSol').show()"
                                     update=":frmSol"
+                                    style="width: 125px;"
                                     actionListener="#{manSolicitudes.iniciarventana()}"
+                                    disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                     />
 
                         <p:menuitem value="Estado Solicitud" icon="ui-icon-help" 
                                     onclick="PF('wEstado').show()"
                                     update=":frmEstado"
+                                    style="width: 125px;"
                                     actionListener="#{manEstado.iniciarventana()}"
+                                    disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                     />
                     </p:submenu>
                     <p:menuitem value="Equipos" icon="ui-icon-gear" 
                                 onclick="PF('wListaEquipos').show()"
                                 update=":frmListaEquipos"
+                                style="width: 125px;"
                                 actionListener="#{manListaEquipos.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
 
 
@@ -123,25 +156,33 @@
                     <p:menuitem value="Aprobaciones" icon="ui-icon-check" 
                                 onclick="PF('wAprobado').show()"
                                 update=":frmAprobado"
+                                style="width: 125px;"
                                 actionListener="#{manAprobacion.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
 
                     <p:menuitem value="Modificaciones" icon="ui-icon-wrench" 
                                 onclick="PF('wModificaciones').show()"
                                 update=":frmModificaciones"
+                                style="width: 125px;"
                                 actionListener="#{manModificaciones.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuModificaciones')}"
                                 />
 
                     <p:menuitem value="Dar Seguimiento" icon="ui-icon-search" 
                                 onclick="PF('wSeguimiento').show()"
                                 update=":frmSeguimiento"
+                                style="width: 125px;"
                                 actionListener="#{manSeguimiento.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
 
                     <p:menuitem value="Histórico" icon="ui-icon-clock" 
                                 onclick="PF('wHistorico').show()"
                                 update=":frmHistorico"
+                                style="width: 125px;"
                                 actionListener="#{manHistorico.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                 </p:submenu>
 
@@ -149,7 +190,9 @@
                     <p:menuitem value="Inventario Piezas" icon="ui-icon-suitcase" 
                                 onclick="PF('wListaPiezas').show()"
                                 update=":frmListaPiezas"
+                                style="width: 125px;"
                                 actionListener="#{manTblPiezas.iniciarventana()}"
+                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
                                 />
                 </p:submenu>
 
@@ -157,6 +200,64 @@
 
                 </p:submenu>
 
+                <p:submenu label="Seguridad" icon="ui-icon-wrench">
+                    
+                        <p:menuitem value="Usuarios" icon="ui-icon-person"
+                                id="menuUsuarios"
+                                onclick="PF('wUsuarios').show()"
+                                update=":frmUsuarios"
+                                actionListener="#{manUsuarios.iniciarventana()}"
+                                style="width: 190px;"
+                                disabled="#{manSeguridad.disableOpt('menuUsuarios')}"
+                                />
+
+                        <p:menuitem value="Grupos de seguridad" icon="ui-icon-suitcase" 
+                                    id="menuGruposSeg"
+                                    onclick="PF('wGrupo').show()"
+                                    update=":frmGrupo"
+                                    actionListener="#{manGrupos.iniciarventana()}"
+                                    style="width: 190px;"
+                                    disabled="#{manSeguridad.disableOpt('menuGruposSeg')}"
+                                    />
+                        
+                         <p:menuitem value="Catalogo Controles" icon="ui-icon-suitcase" 
+                                    id="menuCatCtrl"
+                                    onclick="PF('wControl').show()"
+                                    update=":frmControl"
+                                    actionListener="#{manControles.iniciarventana()}"
+                                    style="width: 190px;"
+                                    disabled="#{manSeguridad.disableOpt('menuCatCtrl')}"
+                                    />
+                         
+                         <p:menuitem value="Asignación Usuarios-Grupos" icon="ui-icon-suitcase" 
+                                    id="menuAsigUsrGrp"
+                                    onclick="PF('wUsrGrp').show()"
+                                    update=":frmUsrGrp"
+                                    actionListener="#{manUserGroup.iniciarventana()}"
+                                    style="width: 190px;"
+                                    disabled="#{manSeguridad.disableOpt('menuAsigUsrGrp')}"
+                                    />
+                        
+                        <p:menuitem value="Asignacion de derechos" icon="ui-icon-locked" 
+                                    id="menuAsigDerechos"
+                                    onclick="PF('wSecurity').show()"
+                                    update=":frmSecurity"
+                                    actionListener="#{manSeguridad.iniciarventana()}"
+                                    style="width: 190px;"
+                                    disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                    />
+                        
+                        <p:menuitem value="Control de  alertas" icon="ui-icon-alert" 
+                                    id="menuControlAlertas"
+                                    onclick="PF('wEstado').show()"
+                                    update=":frmUsuarios"
+                                    actionListener="#{manUsuarios.iniciarventana()}"
+                                    style="width: 190px;"
+                                    disabled="#{manSeguridad.disableOpt('menuControlAlertas')}"
+                                    />
+                                    
+                </p:submenu>
+                
                 <f:facet name="options">
                     <p:commandButton value="Logout" icon="ui-icon-extlink"
                                      actionListener="#{login.endConversation()}"
@@ -3753,7 +3854,455 @@
                 </p:dataTable>
             </h:form>
         </p:dialog>
-        
+       
+         <!--******************************************************************** 
+        ********* Pantalla mantenimiento de Grupos de Seguridad *****************
+        *********************************************************************-->
+
+        <p:dialog  id="dlgGrupo" widgetVar="wGrupo" modal="true" 
+                   width="440" height="290" closable="false" resizable="false" 
+                   header="Mantenimiento de Grupos" rendered="true" 
+                   dynamic="false" visible="false" 
+                   >
+
+            <h:form id="frmGrupo"> 
+                <p:growl id="msgGrupo" showDetail="true" life="4500"/>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Nuevo" style=" width: 100px;"
+                                         actionListener="#{manGrupos.nuevo()}"
+                                         update=":frmGrupo"
+                                         icon="ui-icon-document"
+                                         />
+                        <p:commandButton value="Guardar" style=" width: 100px;"
+                                         actionListener="#{manGrupos.guardar()}"
+                                         update=":frmGrupo"
+                                         icon="ui-icon-disk"
+                                         > 
+                            <p:confirm header="Guardar Registro" 
+                                       message="¿Realmente desea Guardar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Eliminar" style=" width: 100px;"
+                                         actionListener="#{manGrupos.eliminar()}"
+                                         update=":frmGrupo"
+                                         icon="ui-icon-trash"
+                                         >
+                            <p:confirm header="Eliminar Registro" 
+                                       message="¿Realmente desea eliminar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cerrar" style=" width: 100px;"
+                                         onclick="PF('wGrupo').hide()"
+                                         actionListener="#{manGrupos.cerrarventana()}"
+                                         update=":frmGrupo"
+                                         icon="ui-icon-close"
+                                         />
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sí" type="button" 
+                                             styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" 
+                                             styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:panel>
+                    <div style=" background-color:  #666666;">
+                        <p:focus for="txtdescripciongrupo" />
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputText value="Nombre" style="font-weight:bold;"/>
+                            <p:inputText id="txtdescripciongrupo" 
+                                         size="50"
+                                         maxlength="50"
+                                         value="#{manGrupos.des_grp}"
+                                         onfocus="this.select()"
+                                         />
+                        </h:panelGrid>
+                    </div>
+                </p:panel>
+
+                <p:panel>
+                    <p:dataTable id="dtGrupo" var="vGrupo" 
+                                 value="#{manGrupos.grupos}" 
+                                 emptyMessage="No se encontraron resultados" 
+                                 selectionMode="single" selection="#{manGrupos.catgrupos}" 
+                                 rowKey="#{vGrupo.id_grp}"
+                                 editable="false" 
+                                 scrollable="true"
+                                 scrollHeight="120"
+                                 style="width:380px"
+                                 >
+                        <p:ajax event="rowSelect" listener="#{manGrupos.onRowSelect}" 
+                                update=":frmGrupo"/>
+                        <p:ajax event="rowUnselect"/>
+
+                        <p:column style="width:30px" headerText="Id">
+                            <h:outputText value="#{vGrupo.id_grp}" />
+                        </p:column>
+                        <p:column style="width:300px" headerText="Nombre">
+                            <h:outputText value="#{vGrupo.des_grp}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+         
+
+         <!--******************************************************************** 
+        ****** Pantalla mantenimiento de Controles de aplicacion ***************
+        *********************************************************************-->
+
+        <p:dialog  id="dlgControl" widgetVar="wControl" modal="true" 
+                   width="540" height="390" closable="false" resizable="false" 
+                   header="Mantenimiento de Controles" rendered="true" 
+                   dynamic="false" visible="false" 
+                   >
+
+            <h:form id="frmControl"> 
+                <p:growl id="msgControl" showDetail="true" life="4500"/>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Nuevo" style=" width: 100px;"
+                                         actionListener="#{manControles.nuevo()}"
+                                         update=":frmControl"
+                                         icon="ui-icon-document"
+                                         />
+                        <p:commandButton value="Guardar" style=" width: 100px;"
+                                         actionListener="#{manControles.guardar()}"
+                                         update=":frmControl"
+                                         icon="ui-icon-disk"
+                                         > 
+                            <p:confirm header="Guardar Registro" 
+                                       message="¿Realmente desea Guardar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Eliminar" style=" width: 100px;"
+                                         actionListener="#{manControles.eliminar()}"
+                                         update=":frmControl"
+                                         icon="ui-icon-trash"
+                                         >
+                            <p:confirm header="Eliminar Registro" 
+                                       message="¿Realmente desea eliminar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cerrar" style=" width: 100px;"
+                                         onclick="PF('wControl').hide()"
+                                         actionListener="#{manControles.cerrarventana()}"
+                                         update=":frmControl"
+                                         icon="ui-icon-close"
+                                         />
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sí" type="button" 
+                                             styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" 
+                                             styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:panel>
+                    <div style=" background-color:  #666666;">
+                        <p:focus for="ommodulocontrol" />
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputText value="Modulo" style="font-weight:bold;" />
+                            <p:selectOneMenu id="ommodulocontrol" value="#{manControles.id_mod}" style=" width: 150px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manControles.modulos}" var="modusu"
+                                           itemLabel="#{modusu.des_mod}" itemValue="#{modusu.id_mod}"/> 
+                            </p:selectOneMenu>
+                            <h:outputText value="Identificador" style="font-weight:bold;"/>
+                            <p:inputText id="txtsidcontrol" 
+                                         size="50"
+                                         maxlength="50"
+                                         value="#{manControles.sid_ctrl}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Descripción" style="font-weight:bold;"/>
+                            <p:inputText id="txtdescripcioncontrol" 
+                                         size="70"
+                                         maxlength="150"
+                                         value="#{manControles.ctrl_desc}"
+                                         onfocus="this.select()"
+                                         />
+                        </h:panelGrid>
+                    </div>
+                </p:panel>
+
+                <p:panel>
+                    <p:dataTable id="dtControl" var="vControl" 
+                                 value="#{manControles.controles}" 
+                                 emptyMessage="No se encontraron resultados" 
+                                 selectionMode="single" selection="#{manControles.catcontroles}" 
+                                 rowKey="#{vControl.cod_ctrl}"
+                                 editable="false" 
+                                 scrollable="true"
+                                 scrollHeight="120"
+                                 style="width:480px"
+                                 >
+                        <p:ajax event="rowSelect" listener="#{manControles.onRowSelect}" 
+                                update=":frmControl"/>
+                        <p:ajax event="rowUnselect"/>
+
+                        <p:column style="width:30px" headerText="Id">
+                            <h:outputText value="#{vControl.cod_ctrl}" />
+                        </p:column>
+                        <p:column style="width:50px" headerText="Modulo">
+                            <h:outputText value="#{vControl.modulo}" />
+                        </p:column>
+                        <p:column style="width:80px" headerText="Nombre">
+                            <h:outputText value="#{vControl.sid_ctrl}" />
+                        </p:column>
+                        <p:column style="width:200px" headerText="Descripción">
+                            <h:outputText value="#{vControl.ctrl_desc}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
+         
+          <!--******************************************************************** 
+        ****** Pantalla de Asignación de usuarios a grupos *********
+        *********************************************************************-->
+
+        <p:dialog  id="dlgUsrGrp" widgetVar="wUsrGrp" modal="true" 
+                   width="540" height="390" closable="false" resizable="false" 
+                   header="Asignación de Usuarios a Grupos" rendered="true" 
+                   dynamic="false" visible="false" 
+                   >
+
+            <h:form id="frmUsrGrp"> 
+                <p:growl id="msgUsrGrp" showDetail="true" life="4500"/>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Nuevo" style=" width: 100px;"
+                                         actionListener="#{manUserGroup.nuevo()}"
+                                         update=":frmUsrGrp"
+                                         icon="ui-icon-document"
+                                         />
+                        <p:commandButton value="Guardar" style=" width: 100px;"
+                                         actionListener="#{manUserGroup.guardar()}"
+                                         update=":frmUsrGrp"
+                                         icon="ui-icon-disk"
+                                         > 
+                            <p:confirm header="Guardar Registro" 
+                                       message="¿Realmente desea Guardar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Eliminar" style=" width: 100px;"
+                                         actionListener="#{manUserGroup.eliminar()}"
+                                         update=":frmUsrGrp"
+                                         icon="ui-icon-trash"
+                                         >
+                            <p:confirm header="Eliminar Registro" 
+                                       message="¿Realmente desea eliminar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cerrar" style=" width: 100px;"
+                                         onclick="PF('wUsrGrp').hide()"
+                                         actionListener="#{manUserGroup.cerrarventana()}"
+                                         update=":frmUsrGrp"
+                                         icon="ui-icon-close"
+                                         />
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sí" type="button" 
+                                             styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" 
+                                             styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:panel>
+                    <div style=" background-color:  #666666;">
+                        <p:focus for="omgrupousrgrp" />
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputText value="Grupo" style="font-weight:bold;" />
+                            <p:selectOneMenu id="omgrupousrgrp" value="#{manUserGroup.id_grp}" style=" width: 200px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manUserGroup.grupos}" var="manusrgrpgroup"
+                                               itemLabel="#{manusrgrpgroup.des_grp}" itemValue="#{manusrgrpgroup.id_grp}"/> 
+                            </p:selectOneMenu>
+                            
+                            <h:outputText value="Usuario" style="font-weight:bold;" />
+                            <p:selectOneMenu id="omusuariousrgrp" value="#{manUserGroup.cod_usu}" style=" width: 125px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manUserGroup.usuarios}" var="manusrgrpuser"
+                                               itemLabel="#{manusrgrpuser.nom_usu}" itemValue="#{manusrgrpuser.cod_usu}"/> 
+                            </p:selectOneMenu>
+                            
+                        </h:panelGrid>
+                    </div>
+                </p:panel>
+
+                <p:panel>
+                    <p:dataTable id="dtUsrGrp" var="vUsrGrp" 
+                                 value="#{manUserGroup.usergroup}" 
+                                 emptyMessage="No se encontraron resultados" 
+                                 selectionMode="single" selection="#{manUserGroup.catusergroup}" 
+                                 rowKey="#{vUsrGrp.id_usr_grp}"
+                                 editable="false" 
+                                 scrollable="true"
+                                 scrollHeight="120"
+                                 style="width:485px"
+                                 >
+                        <p:ajax event="rowSelect" listener="#{manUserGroup.onRowSelect}" 
+                                update=":frmUsrGrp"/>
+                        <p:ajax event="rowUnselect"/>
+
+                        <p:column style="width:30px" headerText="Id">
+                            <h:outputText value="#{vUsrGrp.id_usr_grp}" />
+                        </p:column>
+                        <p:column style="width:120px" headerText="Grupo">
+                            <h:outputText value="#{vUsrGrp.grupo}" />
+                        </p:column>
+                        <p:column style="width:100px" headerText="Usuario">
+                            <h:outputText value="#{vUsrGrp.usuario}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
+          
+         <!--******************************************************************** 
+        **********    Pantalla de Registro de derechos de seguridad  ************
+        *********************************************************************-->
+
+        <p:dialog  id="dlgSecurity" widgetVar="wSecurity" modal="true" 
+                   width="640" height="450" closable="false" resizable="false" 
+                   header="Asignación de Permisos" rendered="true" 
+                   dynamic="false" visible="false" 
+                   >
+
+            <h:form id="frmSecurity"> 
+                <p:growl id="msgSecurity" showDetail="true" life="4500"/>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Nuevo" style=" width: 100px;"
+                                         actionListener="#{manSeguridad.nuevo()}"
+                                         update=":frmSecurity"
+                                         icon="ui-icon-document"
+                                         />
+                        <p:commandButton value="Guardar" style=" width: 100px;"
+                                         actionListener="#{manSeguridad.guardar()}"
+                                         update=":frmSecurity"
+                                         icon="ui-icon-disk"
+                                         > 
+                            <p:confirm header="Guardar Registro" 
+                                       message="¿Realmente desea Guardar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Eliminar" style=" width: 100px;"
+                                         actionListener="#{manSeguridad.eliminar()}"
+                                         update=":frmSecurity"
+                                         icon="ui-icon-trash"
+                                         >
+                            <p:confirm header="Eliminar Registro" 
+                                       message="¿Realmente desea eliminar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cerrar" style=" width: 100px;"
+                                         onclick="PF('wSecurity').hide()"
+                                         actionListener="#{manSeguridad.cerrarventana()}"
+                                         update=":frmSecurity"
+                                         icon="ui-icon-close"
+                                         />
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sí" type="button" 
+                                             styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" 
+                                             styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:panel>
+                    <div style=" background-color:  #666666;">
+                        <p:focus for="ommodsecurity" />
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputText value="Modulo" style="font-weight:bold;" />
+                            <p:selectOneMenu id="ommodsecurity" value="#{manSeguridad.id_mod}" style=" width: 150px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manSeguridad.modulos}" var="manmodsecurity"
+                                               itemLabel="#{manmodsecurity.des_mod}" itemValue="#{manmodsecurity.id_mod}"/> 
+                            </p:selectOneMenu>
+                            
+                            <h:outputText value="Control" style="font-weight:bold;" />
+                            <p:selectOneMenu id="omctrlsecurity" value="#{manSeguridad.cod_ctrl}" style=" width: 250px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manSeguridad.controles}" var="manctrlsecurity"
+                                               itemLabel="#{manctrlsecurity.ctrl_desc}" itemValue="#{manctrlsecurity.cod_ctrl}"/> 
+                            </p:selectOneMenu>
+                                                        
+                            <h:outputText value="Grupo" style="font-weight:bold;" />
+                            <p:selectOneMenu id="omgrpsecurity" value="#{manSeguridad.id_grp}" style=" width: 150px;">
+                                <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                <f:selectItems value="#{manSeguridad.grupos}" var="mangrpsecurity"
+                                               itemLabel="#{mangrpsecurity.des_grp}" itemValue="#{mangrpsecurity.id_grp}"/> 
+                            </p:selectOneMenu>
+                            <h:outputText value="Usuario" style="font-weight:bold;" />
+                            <h:panelGroup>
+                                <p:selectOneMenu id="omususecurity" value="#{manSeguridad.cod_usu}" style=" width: 150px;">
+                                    <f:selectItem itemLabel="Ninguno" itemValue="0"/>
+                                    <f:selectItems value="#{manSeguridad.usuarios}" var="manususecurity"
+                                                   itemLabel="#{manususecurity.nom_usu}" itemValue="#{manususecurity.cod_usu}"/> 
+                                </p:selectOneMenu>
+                                 <p:spacer width="20"/>
+                                <h:outputLabel value="Activo: " style="font-weight:bold;" />
+                                <p:spacer width="10"/>
+                                <p:selectBooleanButton value="#{manSeguridad.activo}" onLabel="Si" offLabel="No" style="width:30px" />
+                            </h:panelGroup>
+                            
+                        </h:panelGrid>
+                    </div>
+                </p:panel>
+
+                <p:panel>
+                    <p:dataTable id="dtSecurity" var="vSecurity" 
+                                 value="#{manSeguridad.seguridad}" 
+                                 emptyMessage="No se encontraron resultados" 
+                                 selectionMode="single" selection="#{manSeguridad.catseguridad}" 
+                                 rowKey="#{vSecurity.cod_sec}"
+                                 editable="false" 
+                                 scrollable="true"
+                                 scrollHeight="120"
+                                 style="width:560px; height:280px "
+                                 >
+                        <p:ajax event="rowSelect" listener="#{manSeguridad.onRowSelect}" 
+                                update=":frmSecurity"/>
+                        <p:ajax event="rowUnselect"/>
+
+                        <p:column style="width:30px" headerText="Id">
+                            <h:outputText value="#{vSecurity.cod_sec}" />
+                        </p:column>
+                        <p:column style="width:150px" headerText="Control">
+                            <h:outputText value="#{vSecurity.control}" />
+                        </p:column>
+                        <p:column style="width:100px" headerText="Grupo">
+                            <h:outputText value="#{vSecurity.grupo}" />
+                        </p:column>
+                        <p:column style="width:100px" headerText="Usuario">
+                            <h:outputText value="#{vSecurity.usuario}" />
+                        </p:column>
+                        <p:column style="width:70px; text-align:center;" headerText="Activo">
+                            <p:selectBooleanCheckbox value="#{vSecurity.activo}" />
+                        </p:column>                        
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
 
     </h:body>
 
