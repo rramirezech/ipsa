@@ -63,13 +63,13 @@
                                 update=":frmUbi"
                                 style="width: 125px;"
                                 actionListener="#{manUbicaciones.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuRepisas')}"
                                 />
                     <p:menuitem value="Proveedores" icon="ui-icon-person" 
                                 onclick="PF('wPro').show()"
                                 style="width: 125px;"
                                 action="#{manProveedores.iniciarventana()}" 
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuProveedores')}"
                                 update=":frmPro"
                                 />
                     <p:menuitem value="Marcas" icon="ui-icon-tag" 
@@ -77,42 +77,42 @@
                                 style="width: 125px;"
                                 action="#{manMarcas.iniciarventana()}" 
                                 update=":frmMarca"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuMarcas')}"
                                 />
                     <p:menuitem value="Tipología Mant." icon="ui-icon-wrench" 
                                 onclick="PF('wTipMan').show()"
                                 style="width: 125px;"
                                 action="#{manTipos.iniciarventana()}" 
                                 update=":frmTipMan"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuTipoMantenimiento')}"
                                 />
                     <p:menuitem value="Categorías Piezas" icon="ui-icon-note" 
                                 onclick="PF('wCatPie').show()"
                                 style="width: 125px;"
                                 action="#{manCategorias.iniciarventana()}" 
                                 update=":frmCatPie"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuCategoriaPiezas')}"
                                 />
-                    <p:menuitem value="Operaciones" icon="ui-icon-wrench" 
+                    <p:menuitem value="Procesos" icon="ui-icon-wrench" 
                                 onclick="PF('wOpe').show()"
                                 style="width: 125px;"
                                 action="#{manOperaciones.iniciarventana()}" 
                                 update=":frmOpe"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuProcesos')}"
                                 />
                     <p:menuitem value="Equipos" icon="ui-icon-gear" 
                                 onclick="PF('wEquipos').show()"
                                 style="width: 125px;"
                                 action="#{manEquipos.iniciarventana()}" 
                                 update=":frmEquipos"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuEquipos')}"
                                 />
                     <p:menuitem value="Piezas" icon="ui-icon-pin-s" 
                                 onclick="PF('wPiezas').show()"
                                 style="width: 125px;"
                                 action="#{manPiezas.iniciarventana()}" 
                                 update=":frmPiezas"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuPiezas')}"
                                 />
                 </p:submenu>
 
@@ -123,7 +123,7 @@
                                     update=":frmSol"
                                     style="width: 125px;"
                                     actionListener="#{manSolicitudes.iniciarventana()}"
-                                    disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                    disabled="#{manSeguridad.disableOpt('menuNuevaSolicitud')}"
                                     />
 
                         <p:menuitem value="Estado Solicitud" icon="ui-icon-help" 
@@ -131,7 +131,7 @@
                                     update=":frmEstado"
                                     style="width: 125px;"
                                     actionListener="#{manEstado.iniciarventana()}"
-                                    disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                    disabled="#{manSeguridad.disableOpt('menuEstadoSolicitud')}"
                                     />
                     </p:submenu>
                     <p:menuitem value="Equipos" icon="ui-icon-gear" 
@@ -139,7 +139,7 @@
                                 update=":frmListaEquipos"
                                 style="width: 125px;"
                                 actionListener="#{manListaEquipos.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuListaEquipos')}"
                                 />
 
 
@@ -151,7 +151,7 @@
                                 update=":frmAprobado"
                                 style="width: 125px;"
                                 actionListener="#{manAprobacion.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuAprovaciones')}"
                                 />
 
                     <p:menuitem value="Modificaciones" icon="ui-icon-wrench" 
@@ -167,7 +167,7 @@
                                 update=":frmSeguimiento"
                                 style="width: 125px;"
                                 actionListener="#{manSeguimiento.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuSeguimiento')}"
                                 />
 
                     <p:menuitem value="Histórico" icon="ui-icon-clock" 
@@ -175,7 +175,7 @@
                                 update=":frmHistorico"
                                 style="width: 125px;"
                                 actionListener="#{manHistorico.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuHistorico')}"
                                 />
                 </p:submenu>
 
@@ -185,7 +185,7 @@
                                 update=":frmListaPiezas"
                                 style="width: 125px;"
                                 actionListener="#{manTblPiezas.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuAsigDerechos')}"
+                                disabled="#{manSeguridad.disableOpt('menuInventarioPiezas')}"
                                 />
                 </p:submenu>
 
@@ -862,7 +862,7 @@
 
         <p:dialog  id="dlgOperaciones" widgetVar="wOpe" modal="true" 
                    width="440" height="290" closable="false" resizable="false" 
-                   header="Mantenimiento de Operaciones" rendered="true" 
+                   header="Mantenimiento de Procesos" rendered="true" 
                    dynamic="false" visible="false" 
                    >
 
