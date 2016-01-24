@@ -7,7 +7,10 @@ package paquetes;
 
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.jboss.logging.Logger;
 
 @Singleton
@@ -24,7 +27,17 @@ public class AlertSchedule {
         
         log.info(":. Inicio TareaProgramada.");
         
-        
+        Email email = new SimpleEmail();
+        email.setHostName("smtp.ipage.com");
+        email.setSmtpPort(587);
+        email.setAuthenticator(new DefaultAuthenticator("administracion@prodyco.net", "Tdsystems1"));
+        email.setSSLOnConnect(true);
+        email.setFrom("administracion@prodyco.net");
+        email.setSubject("Correo de Prueba");
+        email.setMsg("Este es un correo de prueba");
+        email.addTo("rramirezech@hotmail.com");
+        email.send();
+
         try {
             timeInit = System.currentTimeMillis();
             // TODO Hacer la logica de la tarea programada
