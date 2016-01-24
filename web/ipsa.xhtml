@@ -24,13 +24,6 @@
             <p:menubar id="menumadre">
 
                 <p:submenu label="Catálogos" icon="ui-icon-folder-open">
-                    <p:menuitem value="Usuarios" icon="ui-icon-person"
-                                onclick="PF('wUsuarios').show()"
-                                update=":frmUsuarios"
-                                style="width: 125px;"
-                                actionListener="#{manUsuarios.iniciarventana()}"
-                                disabled="#{manSeguridad.disableOpt('menuUsuarios')}"
-                                />
                     <p:menuitem value="Departamentos" icon="ui-icon-home" 
                                 onclick="PF('wDepartamentos').show()"
                                 update=":frmDepartamentos"
@@ -210,7 +203,6 @@
                                 style="width: 190px;"
                                 disabled="#{manSeguridad.disableOpt('menuUsuarios')}"
                                 />
-
                         <p:menuitem value="Grupos de seguridad" icon="ui-icon-suitcase" 
                                     id="menuGruposSeg"
                                     onclick="PF('wGrupo').show()"
