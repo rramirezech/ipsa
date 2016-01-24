@@ -84,6 +84,11 @@ tr.jsfcrud_even_row {
     width: 98% !important;
 }
 
+.ui-menu-child {
+    white-space: nowrap;
+    width: auto !important;
+}
+
 .ui-progressbar {  /* made progress bar smaller to fit on same line */
     width: 50px!important;
     height: 15px!important; 
