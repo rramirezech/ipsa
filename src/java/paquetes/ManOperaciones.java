@@ -153,9 +153,9 @@ public class ManOperaciones implements Serializable{
 
     public boolean validardatos() {
         boolean mValidar = true;
-        if ("".equals(cod_ope) == true) {
+        if ("".equals(nom_ope) == true) {
             mValidar = false;
-            addMessage("Validar Datos", "Debe Ingresar un Nombre para la Operación.", 2);
+            addMessage("Validar Datos", "Debe Ingresar un Nombre para el proceso.", 2);
         }
         Accesos maccesos = new Accesos();
         maccesos.Conectar();
