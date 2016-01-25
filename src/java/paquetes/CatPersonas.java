@@ -5,12 +5,12 @@ import java.io.Serializable;
 
 public class CatPersonas implements Serializable{
     
-    private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu;
+    private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, usuario;
 
     public CatPersonas() {
     }
 
-    public CatPersonas(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String dui, String nit, String isss, String id_cargo, String cod_usu) {
+    public CatPersonas(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String dui, String nit, String isss, String id_cargo, String usuario) {
         this.id_per = id_per;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -21,7 +21,7 @@ public class CatPersonas implements Serializable{
         this.nit = nit;
         this.isss = isss;
         this.id_cargo = id_cargo;
-        this.cod_usu = cod_usu;
+        this.usuario = usuario;
     }
 
     public String getId_per() {
@@ -104,12 +104,12 @@ public class CatPersonas implements Serializable{
         this.id_cargo = id_cargo;
     }
 
-    public String getCod_usu() {
-        return cod_usu;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setCod_usu(String cod_usu) {
-        this.cod_usu = cod_usu;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     

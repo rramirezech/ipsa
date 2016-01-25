@@ -15,88 +15,197 @@ import org.primefaces.event.SelectEvent;
 @ConversationScoped
 public class ManPersonas implements Serializable {
 
-    private static final long serialVersionUID = 8797678674716638L;
+    private static final long serialVersionUID = 8797678674711638L;
     @Inject
     Login cbean;
-    private CatMarcas catmarcas;
-    private List<CatMarcas> marcas;
-    private String id_mar, nom_mar;
+    private CatPersonas catpersonas;
+    private List<CatPersonas> personas;
+    private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, usuario;
 
     public ManPersonas() {
     }
 
-    public CatMarcas getCatmarcas() {
-        return catmarcas;
+    public CatPersonas getCatpersonas() {
+        return catpersonas;
     }
 
-    public void setCatmarcas(CatMarcas catmarcas) {
-        this.catmarcas = catmarcas;
+    public void setCatpersonas(CatPersonas catpersonas) {
+        this.catpersonas = catpersonas;
     }
 
-    public List<CatMarcas> getMarcas() {
-        return marcas;
+    public List<CatPersonas> getPersonas() {
+        return personas;
     }
 
-    public void setMarcas(List<CatMarcas> marcas) {
-        this.marcas = marcas;
+    public void setPersonas(List<CatPersonas> personas) {
+        this.personas = personas;
     }
 
-    public String getId_mar() {
-        return id_mar;
+    public String getId_per() {
+        return id_per;
     }
 
-    public void setId_mar(String id_mar) {
-        this.id_mar = id_mar;
+    public void setId_per(String id_per) {
+        this.id_per = id_per;
     }
 
-    public String getNom_mar() {
-        return nom_mar;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNom_mar(String nom_mar) {
-        this.nom_mar = nom_mar;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getDui() {
+        return dui;
+    }
+
+    public void setDui(String dui) {
+        this.dui = dui;
+    }
+
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+
+    public String getIsss() {
+        return isss;
+    }
+
+    public void setIsss(String isss) {
+        this.isss = isss;
+    }
+
+    public String getId_cargo() {
+        return id_cargo;
+    }
+
+    public void setId_cargo(String id_cargo) {
+        this.id_cargo = id_cargo;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    
     public void iniciarventana() {
-        id_mar = "";
-        nom_mar = "";
-        llenarMarcas();
+        id_per = "";
+        nombres = "";
+        apellidos = "";
+        direccion = "";
+        telefono = "";
+        celular = "";
+        dui = "";
+        nit = "";
+        isss = "";
+        id_cargo = "";
+        usuario = "";
+        llenarPersonas();
     }
 
     public void cerrarventana() {
-        id_mar = "";
-        nom_mar = "";
-        marcas = new ArrayList<>();
+        id_per = "";
+        nombres = "";
+        apellidos = "";
+        direccion = "";
+        telefono = "";
+        celular = "";
+        dui = "";
+        nit = "";
+        isss = "";
+        id_cargo = "";
+        usuario = "";
+        personas = new ArrayList<>();
     }
 
-    public void llenarMarcas() {
+    public void llenarPersonas() {
         String mQuery = "";
         try {
-            catmarcas = new CatMarcas();
-            marcas = new ArrayList<>();
+            catpersonas = new CatPersonas();
+            personas = new ArrayList<>();
 
-            mQuery = "select id_mar, nom_mar from cat_mar order by id_mar;";
+            mQuery = "select id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu from cat_per order by id_per;";
             ResultSet resVariable;
             Accesos mAccesos = new Accesos();
             mAccesos.Conectar();
             resVariable = mAccesos.querySQLvariable(mQuery);
             while (resVariable.next()) {
-                marcas.add(new CatMarcas(
+                personas.add(new CatPersonas(
                         resVariable.getString(1),
-                        resVariable.getString(2)
+                        resVariable.getString(2),
+                        resVariable.getString(3),
+                        resVariable.getString(4),
+                        resVariable.getString(5),
+                        resVariable.getString(6),
+                        resVariable.getString(7),
+                        resVariable.getString(8),
+                        resVariable.getString(9),
+                        resVariable.getString(10),
+                        resVariable.getString(11)                        
                 ));
             }
             mAccesos.Desconectar();
 
         } catch (Exception e) {
-            System.out.println("Error en el llenado de Catálogo Marcas. " + e.getMessage() + " Query: " + mQuery);
+            System.out.println("Error en el llenado de Registro de Personas. " + e.getMessage() + " Query: " + mQuery);
         }
     }
 
     public void nuevo() {
-        id_mar = "";
-        nom_mar = "";
-        catmarcas = new CatMarcas();
+        id_per = "";
+        nombres = "";
+        apellidos = "";
+        direccion = "";
+        telefono = "";
+        celular = "";
+        dui = "";
+        nit = "";
+        isss = "";
+        id_cargo = "";
+        usuario = "";
+        catpersonas = new CatPersonas();
     }
 
     public void guardar() {
@@ -105,25 +214,35 @@ public class ManPersonas implements Serializable {
             try {
                 Accesos mAccesos = new Accesos();
                 mAccesos.Conectar();
-                if ("".equals(id_mar)) {
-                    mQuery = "select ifnull(max(id_mar),0)+1 as codigo from cat_mar;";
-                    id_mar = mAccesos.strQuerySQLvariable(mQuery);
-                    mQuery = "insert into cat_mar (id_mar,nom_mar) "
-                            + "values (" + id_mar + ",'" + nom_mar + "');";
+                if ("".equals(id_per)) {
+                    mQuery = "select ifnull(max(id_per),0)+1 as codigo from cat_per;";
+                    id_per = mAccesos.strQuerySQLvariable(mQuery);
+                    mQuery = "insert into cat_per (id_per,nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu) "
+                            + "values (" + id_per + ",'" + nombres + "','" + apellidos + "','" + direccion + "','" + telefono 
+                            + "','" + celular + "','" + dui + "','" + nit + "','" + isss + "'," + id_cargo + ",'" + usuario + "');";
                 } else {
-                    mQuery = "update cat_mar SET "
-                            + " nom_mar = '" + nom_mar + "' "
-                            + "WHERE id_mar = " + id_mar + ";";
+                    mQuery = "update cat_per SET "
+                            + " nombres = '" + nombres + "',"
+                            + " nombres = '" + apellidos + "',"
+                            + " nombres = '" + direccion + "',"
+                            + " nombres = '" + telefono + "',"
+                            + " nombres = '" + celular + "',"
+                            + " nombres = '" + dui + "',"
+                            + " nombres = '" + nit + "',"
+                            + " nombres = '" + isss + "',"
+                            + " nombres = '" + id_cargo + "',"
+                            + " nombres = '" + usuario + "'"
+                            + "WHERE id_per = " + id_per + ";";
 
                 }
                 mAccesos.dmlSQLvariable(mQuery);
                 mAccesos.Desconectar();
-                addMessage("Guardar Marca", "Información Almacenada con éxito.", 1);
+                addMessage("Guardar Persona", "Información Almacenada con éxito.", 1);
             } catch (Exception e) {
-                addMessage("Guardar Marca", "Error al momento de guardar la información. " + e.getMessage(), 2);
-                System.out.println("Error al Guardar Marca. " + e.getMessage() + " Query: " + mQuery);
+                addMessage("Guardar Persona", "Error al momento de guardar la información. " + e.getMessage(), 2);
+                System.out.println("Error al Guardar Persona. " + e.getMessage() + " Query: " + mQuery);
             }
-            llenarMarcas();
+            llenarPersonas();
         }
         nuevo();
 
@@ -133,19 +252,19 @@ public class ManPersonas implements Serializable {
         String mQuery = "";
         Accesos mAccesos = new Accesos();
         mAccesos.Conectar();
-        if ("".equals(id_mar) == false) {
+        if ("".equals(id_per) == false) {
             try {
-                mQuery = "delete from cat_mar where id_mar=" + id_mar + ";";
+                mQuery = "delete from cat_per where id_per=" + id_per + ";";
                 mAccesos.dmlSQLvariable(mQuery);
-                addMessage("Eliminar Marca", "Información Eliminada con éxito.", 1);
+                addMessage("Eliminar Persona", "Información Eliminada con éxito.", 1);
             } catch (Exception e) {
-                addMessage("Eliminar Marca", "Error al momento de Eliminar la información. " + e.getMessage(), 2);
-                System.out.println("Error al Eliminar Marca. " + e.getMessage() + " Query: " + mQuery);
+                addMessage("Eliminar Persona", "Error al momento de Eliminar la información. " + e.getMessage(), 2);
+                System.out.println("Error al Eliminar Persona. " + e.getMessage() + " Query: " + mQuery);
             }
-            llenarMarcas();
+            llenarPersonas();
             nuevo();
         } else {
-            addMessage("Eliminar Marcas", "Debe elegir un Registro.", 2);
+            addMessage("Eliminar Persona", "Debe elegir un Registro.", 2);
         }
         mAccesos.Desconectar();
 
@@ -153,16 +272,32 @@ public class ManPersonas implements Serializable {
 
     public boolean validardatos() {
         boolean mValidar = true;
-        if ("".equals(nom_mar) == true) {
+        if ("".equals(nombres) == true) {
             mValidar = false;
-            addMessage("Validar Datos", "Debe Ingresar un Nombre para la Marca.", 2);
+            addMessage("Validar Datos", "Debe Ingresar Nombre de la persona.", 2);
         }
+        
+        if ("".equals(apellidos) == true) {
+            mValidar = false;
+            addMessage("Validar Datos", "Debe Ingresar Apellidos de la persona.", 2);
+        }
+        
+        if ("".equals(dui) == true) {
+            mValidar = false;
+            addMessage("Validar Datos", "Debe Ingresar DUI de la persona.", 2);
+        }
+        
+        if ("0".equals(id_cargo) == true) {
+            mValidar = false;
+            addMessage("Validar Datos", "Debe Ingresar El cargo de la persona.", 2);
+        }
+        
         Accesos maccesos = new Accesos();
         maccesos.Conectar();
-        if ("0".equals(maccesos.strQuerySQLvariable("select count(id_mar) from cat_mar "
-                + "where upper(nom_mar)='" + nom_mar.toUpperCase() + "';")) == false && "".equals(id_mar)) {
+        if ("0".equals(maccesos.strQuerySQLvariable("select count(id_per) from cat_per "
+                + "where (dui = '" + dui +"')"))) {
             mValidar = false;
-            addMessage("Validar Datos", "El Nombre de la Marca ya existe.", 2);
+            addMessage("Validar Datos", "El DUI de la Persona ya existe.", 2);
         }
         maccesos.Desconectar();
         return mValidar;
@@ -170,8 +305,17 @@ public class ManPersonas implements Serializable {
     }
 
     public void onRowSelect(SelectEvent event) {
-        id_mar = ((CatMarcas) event.getObject()).getId_mar();
-        nom_mar = ((CatMarcas) event.getObject()).getNom_mar();
+        id_per = ((CatPersonas) event.getObject()).getId_per();
+        nombres = ((CatPersonas) event.getObject()).getNombres();
+        apellidos = ((CatPersonas) event.getObject()).getApellidos();
+        direccion = ((CatPersonas) event.getObject()).getDireccion();
+        telefono = ((CatPersonas) event.getObject()).getTelefono();
+        celular = ((CatPersonas) event.getObject()).getCelular();
+        dui = ((CatPersonas) event.getObject()).getDui();
+        nit = ((CatPersonas) event.getObject()).getNit();
+        isss = ((CatPersonas) event.getObject()).getIsss();
+        id_cargo = ((CatPersonas) event.getObject()).getId_cargo();
+        usuario = ((CatPersonas) event.getObject()).getUsuario();
     }
 
     public void addMessage(String summary, String detail, int tipo) {
