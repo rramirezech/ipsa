@@ -3,14 +3,14 @@ package paquetes;
 
 import java.io.Serializable;
 
-public class CatCom implements Serializable{
+public class CatCompetencias implements Serializable{
     
     private String id_com, des_com;
 
-    public CatCom() {
+    public CatCompetencias() {
     }
 
-    public CatCom(String id_com, String des_com) {
+    public CatCompetencias(String id_com, String des_com) {
         this.id_com = id_com;
         this.des_com = des_com;
     }

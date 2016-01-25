@@ -3,14 +3,14 @@ package paquetes;
 
 import java.io.Serializable;
 
-public class CatPer implements Serializable{
+public class CatPersonas implements Serializable{
     
     private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu;
 
-    public CatPer() {
+    public CatPersonas() {
     }
 
-    public CatPer(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String dui, String nit, String isss, String id_cargo, String cod_usu) {
+    public CatPersonas(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String dui, String nit, String isss, String id_cargo, String cod_usu) {
         this.id_per = id_per;
         this.nombres = nombres;
         this.apellidos = apellidos;
