@@ -488,7 +488,7 @@ public class ManSeguridad implements Serializable {
            
             Accesos maccesos = new Accesos();
             maccesos.Conectar();
-                grupo = maccesos.strQuerySQLvariable("select id_grp from cat_usr_grp where cod_usu = '"+ cod_usu +"' limit 1;");
+                grupo = maccesos.strQuerySQLvariable("select id_grp from cat_usr_grp where cod_usu = '"+ usuario +"' limit 1;");
                 codCtrl = maccesos.strQuerySQLvariable("select cod_ctrl from cat_ctrl where sid_ctrl = '"+ idControl +"' limit 1;");
                 
                 ctrlActivo = maccesos.strQuerySQLvariable("select activo from sec_ctrl where cod_ctrl = '" + codCtrl + "' AND ( id_grp = '"+ grupo +"' OR cod_usu = '" + usuario + "') limit 1;");

@@ -312,7 +312,7 @@ public class ManPersonas implements Serializable {
         Accesos maccesos = new Accesos();
         maccesos.Conectar();
         if ("0".equals(maccesos.strQuerySQLvariable("select count(id_per) from cat_per "
-                + "where (dui = '" + dui +"')"))) {
+                + "where dui='" + dui + "';")) == false && "".equals(id_per)) {
             mValidar = false;
             addMessage("Validar Datos", "El DUI de la Persona ya existe.", 2);
         }

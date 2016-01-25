@@ -84,7 +84,7 @@
                                 style="width: 125px;"
                                 action="#{manTipos.iniciarventana()}" 
                                 update=":frmTipMan"
-                                disabled="#{manSeguridad.disableOpt('menuTipoMantenimiento')}"
+                                disabled="#{manSeguridad.disableOpt('menuTipoMtto')}"
                                 />
                     <p:menuitem value="Categorías Piezas" icon="ui-icon-note" 
                                 onclick="PF('wCatPie').show()"
@@ -219,7 +219,7 @@
                                     disabled="#{manSeguridad.disableOpt('menuGruposSeg')}"
                                     />
                         
-                         <p:menuitem value="Catalogo Controles" icon="ui-icon-suitcase" 
+                         <p:menuitem value="Catalogo Controles" icon="ui-icon-flag" 
                                     id="menuCatCtrl"
                                     onclick="PF('wControl').show()"
                                     update=":frmControl"
@@ -228,7 +228,7 @@
                                     disabled="#{manSeguridad.disableOpt('menuCatCtrl')}"
                                     />
                          
-                         <p:menuitem value="Asignación Usuarios-Grupos" icon="ui-icon-suitcase" 
+                         <p:menuitem value="Asignación Usuarios-Grupos" icon="ui-icon-pin-s" 
                                     id="menuAsigUsrGrp"
                                     onclick="PF('wUsrGrp').show()"
                                     update=":frmUsrGrp"
@@ -4361,19 +4361,23 @@
                         <p:focus for="txtnombreper" />
                         <h:panelGrid columns="2" cellpadding="5">
                             <h:outputText value="Nombres" style="font-weight:bold;"/>
-                            <p:inputText id="txtnombreper" 
-                                         size="30"
+                            <h:panelGroup>
+                                <p:inputText id="txtnombreper" 
+                                         size="35"
                                          maxlength="30"
                                          value="#{manPersonas.nombres}"
                                          onfocus="this.select()"
                                          />
-                            <h:outputText value="Apellidos" style="font-weight:bold;"/>
-                            <p:inputText id="txtapellidosper" 
-                                         size="30"
+                                <p:spacer width="20"/>
+                                <h:outputText value="Apellidos" style="font-weight:bold;"/>
+                                <p:spacer width="10"/>
+                                <p:inputText id="txtapellidosper" 
+                                         size="35"
                                          maxlength="30"
                                          value="#{manPersonas.apellidos}"
                                          onfocus="this.select()"
                                          />
+                            </h:panelGroup>
                             <h:outputText value="Dirección" style="font-weight:bold;"/>
                             <p:inputText id="txtdireccionper" 
                                          size="90"
@@ -4382,61 +4386,77 @@
                                          onfocus="this.select()"
                                          />
                             <h:outputText value="Teléfono" style="font-weight:bold;"/>
-                            <p:inputText id="txttelefonoper" 
-                                         size="8"
-                                         maxlength="8"
-                                         value="#{manPersonas.telefono}"
-                                         onfocus="this.select()"
-                                         />
-                            <h:outputText value="Celular" style="font-weight:bold;"/>
-                            <p:inputText id="txtcelularper" 
-                                         size="8"
-                                         maxlength="8"
-                                         value="#{manPersonas.celular}"
-                                         onfocus="this.select()"
-                                         />
-                            <h:outputText value="E-Mail" style="font-weight:bold;"/>
-                            <p:inputText id="txtemailper" 
-                                         size="50"
-                                         maxlength="50"
-                                         value="#{manPersonas.email}"
-                                         onfocus="this.select()"
-                                         />
+                            <h:panelGroup>
+                                <p:inputText id="txttelefonoper" 
+                                             size="10"
+                                             maxlength="8"
+                                             value="#{manPersonas.telefono}"
+                                             onfocus="this.select()"
+                                             />
+                                <p:spacer width="10"/>
+                                <h:outputText value="Celular" style="font-weight:bold;"/>
+                                <p:spacer width="10"/>
+                                <p:inputText id="txtcelularper" 
+                                             size="10"
+                                             maxlength="8"
+                                             value="#{manPersonas.celular}"
+                                             onfocus="this.select()"
+                                             />
+                                <p:spacer width="10"/>
+                                <h:outputText value="E-Mail" style="font-weight:bold;"/>
+                                <p:spacer width="10"/>
+                                <p:inputText id="txtemailper" 
+                                             size="40"
+                                             maxlength="50"
+                                             value="#{manPersonas.email}"
+                                             onfocus="this.select()"
+                                             />
+                            </h:panelGroup>
                             <h:outputText value="Dui" style="font-weight:bold;"/>
-                            <p:inputText id="txtduiper" 
-                                         size="10"
-                                         maxlength="10"
-                                         value="#{manPersonas.dui}"
-                                         onfocus="this.select()"
-                                         />
-                            <h:outputText value="Nit" style="font-weight:bold;"/>
-                            <p:inputText id="txtnitper" 
-                                         size="14"
-                                         maxlength="14"
-                                         value="#{manPersonas.nit}"
-                                         onfocus="this.select()"
-                                         />
-                            <h:outputText value="ISSS" style="font-weight:bold;"/>
-                            <p:inputText id="txtisssper" 
-                                         size="20"
-                                         maxlength="20"
-                                         value="#{manPersonas.isss}"
-                                         onfocus="this.select()"
-                                         />
+                            <h:panelGroup>
+                                <p:inputText id="txtduiper" 
+                                             size="12"
+                                             maxlength="10"
+                                             value="#{manPersonas.dui}"
+                                             onfocus="this.select()"
+                                             />
+                                <p:spacer width="10"/>
+                                <h:outputText value="Nit" style="font-weight:bold;"/>
+                                <p:spacer width="10"/>
+                                <p:inputText id="txtnitper" 
+                                             size="16"
+                                             maxlength="14"
+                                             value="#{manPersonas.nit}"
+                                             onfocus="this.select()"
+                                             />
+                                <p:spacer width="10"/>
+                                <h:outputText value="ISSS" style="font-weight:bold;"/>
+                                <p:spacer width="12"/>
+                                <p:inputText id="txtisssper" 
+                                             size="20"
+                                             maxlength="20"
+                                             value="#{manPersonas.isss}"
+                                             onfocus="this.select()"
+                                             />
+                            </h:panelGroup>
                             <h:outputText value="Cargo" style="font-weight:bold;"/>
-                            <p:inputText id="txtidcargoper" 
-                                         size="50"
-                                         maxlength="50"
-                                         value="#{manPersonas.id_cargo}"
-                                         onfocus="this.select()"
-                                         />
-                            <h:outputText value="Usuario" style="font-weight:bold;"/>
-                            <p:inputText id="txtusuarioper" 
-                                         size="30"
-                                         maxlength="30"
-                                         value="#{manPersonas.usuario}"
-                                         onfocus="this.select()"
-                                         />                            
+                            <h:panelGroup>
+                                <p:inputText id="txtidcargoper" 
+                                             size="45"
+                                             maxlength="50"
+                                             value="#{manPersonas.id_cargo}"
+                                             onfocus="this.select()"
+                                             />
+                                <p:spacer width="20"/>
+                                <h:outputText value="Usuario" style="font-weight:bold;"/>
+                                <p:spacer width="10"/>
+                                <p:inputText id="txtusuarioper" 
+                                             size="25"
+                                             maxlength="30"
+                                             value="#{manPersonas.usuario}"
+                                             onfocus="this.select()"
+                                             />                            
+                            </h:panelGroup>
                         </h:panelGrid>
                     </div>
                 </p:panel>
@@ -4450,22 +4470,22 @@
                                  editable="false"
                                  scrollable="true"
                                  scrollHeight="150"
-                                 style="width:380px"
+                                 style="width:530px"
                                  >
                         <p:ajax event="rowSelect" listener="#{manPersonas.onRowSelect}" 
                                 update=":frmPersonal"/>
                         <p:ajax event="rowUnselect"/>
 
-                        <p:column style="width:300px" headerText="Nombres">
+                        <p:column style="width:100px" headerText="Nombres">
                             <h:outputText value="#{vPersonas.nombres}" />
                         </p:column>
-                        <p:column style="width:300px" headerText="Apellidos">
+                        <p:column style="width:100px" headerText="Apellidos">
                             <h:outputText value="#{vPersonas.apellidos}" />
                         </p:column>
-                        <p:column style="width:300px" headerText="Teléfono">
+                        <p:column style="width:60px" headerText="Teléfono">
                             <h:outputText value="#{vPersonas.telefono}" />
                         </p:column>
-                        <p:column style="width:300px" headerText="E-Mail">
+                        <p:column style="width:150px" headerText="E-Mail">
                             <h:outputText value="#{vPersonas.email}" />
                         </p:column>
                         
