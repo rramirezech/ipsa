@@ -4307,7 +4307,7 @@
         *********************************************************************-->
 
         <p:dialog  id="dlgPersonal" widgetVar="wPersonal" modal="true" 
-                   width="600" height="390" closable="false" resizable="false" 
+                   width="600" height="445" closable="false" resizable="false" 
                    header="Control de Personal" rendered="true" 
                    dynamic="false" visible="false" 
                    >
@@ -4476,10 +4476,10 @@
                                 update=":frmPersonal"/>
                         <p:ajax event="rowUnselect"/>
 
-                        <p:column style="width:100px" headerText="Nombres">
+                        <p:column style="width:110px" headerText="Nombres">
                             <h:outputText value="#{vPersonas.nombres}" />
                         </p:column>
-                        <p:column style="width:100px" headerText="Apellidos">
+                        <p:column style="width:110px" headerText="Apellidos">
                             <h:outputText value="#{vPersonas.apellidos}" />
                         </p:column>
                         <p:column style="width:60px" headerText="Teléfono">

@@ -256,9 +256,9 @@ public class ManPersonas implements Serializable {
                 System.out.println("Error al Guardar Persona. " + e.getMessage() + " Query: " + mQuery);
             }
             llenarPersonas();
+            nuevo();
         }
-        nuevo();
-
+ 
     }
 
     public void eliminar() {
