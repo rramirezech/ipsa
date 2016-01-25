@@ -114,6 +114,13 @@
                                 update=":frmPiezas"
                                 disabled="#{manSeguridad.disableOpt('menuPiezas')}"
                                 />
+                    <p:menuitem value="Personal" icon="ui-icon-pin-s" 
+                                onclick="PF('wPersonal').show()"
+                                style="width: 125px;"
+                                action="#{manPiezas.iniciarventana()}" 
+                                update=":frmPersonal"
+                                disabled="#{manSeguridad.disableOpt('menuPersonal')}"
+                                />
                 </p:submenu>
 
                 <p:submenu label="Mantenimiento" icon="ui-icon-wrench">
@@ -4295,6 +4302,180 @@
             </h:form>
         </p:dialog>
 
+          <!--******************************************************************** 
+        ***************** Pantalla mantenimiento de Personal       ***************
+        *********************************************************************-->
+
+        <p:dialog  id="dlgPersonal" widgetVar="wPersonal" modal="true" 
+                   width="440" height="290" closable="false" resizable="false" 
+                   header="Control de Personal" rendered="true" 
+                   dynamic="false" visible="false" 
+                   >
+
+            <h:form id="frmPersonal"> 
+                <p:growl id="msgPersonal" showDetail="true" life="4500"/>
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:commandButton value="Nuevo" style=" width: 100px;"
+                                         actionListener="#{manPersonas.nuevo()}"
+                                         update=":frmPersonal"
+                                         icon="ui-icon-document"
+                                         />
+                        <p:commandButton value="Guardar" style=" width: 100px;"
+                                         actionListener="#{manPersonas.guardar()}"
+                                         update=":frmPersonal"
+                                         icon="ui-icon-disk"
+                                         > 
+                            <p:confirm header="Guardar Registro" 
+                                       message="¿Realmente desea Guardar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Eliminar" style=" width: 100px;"
+                                         actionListener="#{manPersonas.eliminar()}"
+                                         update=":frmPersonal"
+                                         icon="ui-icon-trash"
+                                         >
+                            <p:confirm header="Eliminar Registro" 
+                                       message="¿Realmente desea eliminar este Registro?" 
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        <p:commandButton value="Cerrar" style=" width: 100px;"
+                                         onclick="PF('wPersonal').hide()"
+                                         actionListener="#{manPersonas.cerrarventana()}"
+                                         update=":frmPersonal"
+                                         icon="ui-icon-close"
+                                         />
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sí" type="button" 
+                                             styleClass="ui-confirmdialog-yes" 
+                                             icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" 
+                                             styleClass="ui-confirmdialog-no" 
+                                             icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </f:facet>
+                </p:toolbar>
+
+                <p:panel>
+                    <div style=" background-color: #D4DEDF;">
+                        <p:focus for="txtnombreper" />
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputText value="Nombres" style="font-weight:bold;"/>
+                            <p:inputText id="txtnombreper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.nombres}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Apellidos" style="font-weight:bold;"/>
+                            <p:inputText id="txtapellidosper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.apellidos}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Dirección" style="font-weight:bold;"/>
+                            <p:inputText id="txtdireccionper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.direccion}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Teléfono" style="font-weight:bold;"/>
+                            <p:inputText id="txttelefonoper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.telefono}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Celular" style="font-weight:bold;"/>
+                            <p:inputText id="txtcelularper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.celular}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="E-Mail" style="font-weight:bold;"/>
+                            <p:inputText id="txtemailper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.email}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Dui" style="font-weight:bold;"/>
+                            <p:inputText id="txtduiper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.dui}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Nit" style="font-weight:bold;"/>
+                            <p:inputText id="txtnitper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.nit}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="ISSS" style="font-weight:bold;"/>
+                            <p:inputText id="txtisssper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.isss}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Cargo" style="font-weight:bold;"/>
+                            <p:inputText id="txtidcargoper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.id_cargo}"
+                                         onfocus="this.select()"
+                                         />
+                            <h:outputText value="Usuario" style="font-weight:bold;"/>
+                            <p:inputText id="txtusuarioper" 
+                                         size="50"
+                                         maxlength="30"
+                                         value="#{manPersonas.usuario}"
+                                         onfocus="this.select()"
+                                         />                            
+                        </h:panelGrid>
+                    </div>
+                </p:panel>
+
+                <p:panel>
+                    <p:dataTable id="dtPersonal" var="vPersonal" 
+                                 value="#{manPersonas.personas}" 
+                                 emptyMessage="No se encontraron resultados" 
+                                 selectionMode="single" selection="#{manPersonas.catpersonas}" 
+                                 rowKey="#{vPersonas.id_per}"
+                                 editable="false"
+                                 scrollable="true"
+                                 scrollHeight="150"
+                                 style="width:380px"
+                                 >
+                        <p:ajax event="rowSelect" listener="#{manPersonas.onRowSelect}" 
+                                update=":frmPersonas"/>
+                        <p:ajax event="rowUnselect"/>
+
+                        <p:column style="width:300px" headerText="Nombres">
+                            <h:outputText value="#{vPersonas.nombres}" />
+                        </p:column>
+                        <p:column style="width:300px" headerText="Apellidos">
+                            <h:outputText value="#{vPersonas.apellidos}" />
+                        </p:column>
+                        <p:column style="width:300px" headerText="Teléfono">
+                            <h:outputText value="#{vPersonas.telefono}" />
+                        </p:column>
+                        <p:column style="width:300px" headerText="E-Mail">
+                            <h:outputText value="#{vPersonas.email}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+
+         
+         
 
     </h:body>
 

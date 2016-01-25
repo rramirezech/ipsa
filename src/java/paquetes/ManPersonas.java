@@ -20,7 +20,7 @@ public class ManPersonas implements Serializable {
     Login cbean;
     private CatPersonas catpersonas;
     private List<CatPersonas> personas;
-    private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, usuario;
+    private String id_per, nombres, apellidos, direccion, telefono, celular, email, dui, nit, isss, id_cargo, usuario;
 
     public ManPersonas() {
     }
@@ -89,6 +89,14 @@ public class ManPersonas implements Serializable {
         this.celular = celular;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getDui() {
         return dui;
     }
@@ -137,6 +145,7 @@ public class ManPersonas implements Serializable {
         direccion = "";
         telefono = "";
         celular = "";
+        email = "";
         dui = "";
         nit = "";
         isss = "";
@@ -152,6 +161,7 @@ public class ManPersonas implements Serializable {
         direccion = "";
         telefono = "";
         celular = "";
+        email = "";
         dui = "";
         nit = "";
         isss = "";
@@ -166,7 +176,7 @@ public class ManPersonas implements Serializable {
             catpersonas = new CatPersonas();
             personas = new ArrayList<>();
 
-            mQuery = "select id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu from cat_per order by id_per;";
+            mQuery = "select id_per, nombres, apellidos, direccion, telefono, celular, email, dui, nit, isss, id_cargo, cod_usu from cat_per order by id_per;";
             ResultSet resVariable;
             Accesos mAccesos = new Accesos();
             mAccesos.Conectar();
@@ -183,7 +193,8 @@ public class ManPersonas implements Serializable {
                         resVariable.getString(8),
                         resVariable.getString(9),
                         resVariable.getString(10),
-                        resVariable.getString(11)                        
+                        resVariable.getString(11),
+                        resVariable.getString(11)
                 ));
             }
             mAccesos.Desconectar();
@@ -200,6 +211,7 @@ public class ManPersonas implements Serializable {
         direccion = "";
         telefono = "";
         celular = "";
+        email = "";
         dui = "";
         nit = "";
         isss = "";
@@ -217,21 +229,22 @@ public class ManPersonas implements Serializable {
                 if ("".equals(id_per)) {
                     mQuery = "select ifnull(max(id_per),0)+1 as codigo from cat_per;";
                     id_per = mAccesos.strQuerySQLvariable(mQuery);
-                    mQuery = "insert into cat_per (id_per,nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, cod_usu) "
+                    mQuery = "insert into cat_per (id_per,nombres, apellidos, direccion, telefono, celular, email, dui, nit, isss, id_cargo, cod_usu) "
                             + "values (" + id_per + ",'" + nombres + "','" + apellidos + "','" + direccion + "','" + telefono 
-                            + "','" + celular + "','" + dui + "','" + nit + "','" + isss + "'," + id_cargo + ",'" + usuario + "');";
+                            + "','" + celular + "','" + email + "','" + dui + "','" + nit + "','" + isss + "'," + id_cargo + ",'" + usuario + "');";
                 } else {
                     mQuery = "update cat_per SET "
                             + " nombres = '" + nombres + "',"
-                            + " nombres = '" + apellidos + "',"
-                            + " nombres = '" + direccion + "',"
-                            + " nombres = '" + telefono + "',"
-                            + " nombres = '" + celular + "',"
-                            + " nombres = '" + dui + "',"
-                            + " nombres = '" + nit + "',"
-                            + " nombres = '" + isss + "',"
-                            + " nombres = '" + id_cargo + "',"
-                            + " nombres = '" + usuario + "'"
+                            + " apellidos = '" + apellidos + "',"
+                            + " direccion = '" + direccion + "',"
+                            + " telefono = '" + telefono + "',"
+                            + " celular = '" + celular + "',"
+                            + " email = '" + email + "',"
+                            + " dui = '" + dui + "',"
+                            + " nit = '" + nit + "',"
+                            + " isss = '" + isss + "',"
+                            + " id_cargo = '" + id_cargo + "',"
+                            + " cod_usu = '" + usuario + "'"
                             + "WHERE id_per = " + id_per + ";";
 
                 }
@@ -287,6 +300,10 @@ public class ManPersonas implements Serializable {
             addMessage("Validar Datos", "Debe Ingresar DUI de la persona.", 2);
         }
         
+        if ("".equals(email) == true) {
+            mValidar = false;
+            addMessage("Validar Datos", "Debe Ingresar E-Mail de la persona.", 2);
+        }
         if ("0".equals(id_cargo) == true) {
             mValidar = false;
             addMessage("Validar Datos", "Debe Ingresar El cargo de la persona.", 2);

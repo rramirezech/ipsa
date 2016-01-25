@@ -5,18 +5,19 @@ import java.io.Serializable;
 
 public class CatPersonas implements Serializable{
     
-    private String id_per, nombres, apellidos, direccion, telefono, celular, dui, nit, isss, id_cargo, usuario;
+    private String id_per, nombres, apellidos, direccion, telefono, celular, email, dui, nit, isss, id_cargo, usuario;
 
     public CatPersonas() {
     }
 
-    public CatPersonas(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String dui, String nit, String isss, String id_cargo, String usuario) {
+    public CatPersonas(String id_per, String nombres, String apellidos, String direccion, String telefono, String celular, String email, String dui, String nit, String isss, String id_cargo, String usuario) {
         this.id_per = id_per;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.direccion = direccion;
         this.telefono = telefono;
         this.celular = celular;
+        this.email = email;
         this.dui = dui;
         this.nit = nit;
         this.isss = isss;
@@ -72,6 +73,14 @@ public class CatPersonas implements Serializable{
         this.celular = celular;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public String getDui() {
         return dui;
     }
